@@ -1,18 +1,19 @@
-# Nome do projeto
+# Puc Overflow
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+O objetivo principal do PUC Overflow é conectar estudantes de diferentes unidades e cursos que estejam cursando a mesma matéria ou similares para tirar dúvidas, conversar sobre os tópicos e se ajudarem. Isso tudo em só uma plataforma que conecta todos os estudantes para poder agregar o máximo de discussões e dúvidas sobre um certo tópico.
 
-## Alunos integrantes da equipe
+* Israel Domenici   
+* Caio Grossi
+* Eduardo Bonfim
+* Samuel Garcia
+* Daniel Araujo
+* Gabriel Falk
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Caroline Rhaian da Silva Jandre
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
