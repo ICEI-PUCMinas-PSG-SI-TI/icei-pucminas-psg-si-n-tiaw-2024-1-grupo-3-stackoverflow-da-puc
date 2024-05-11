@@ -1,15 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Stack Overflow</title>
+    <link rel="stylesheet" href="./assets/css/homestyle.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="row">
-            
+        <div class="sidebar">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Questions</a></li>
+                <li><a href="#"><i class="fas fa-tags"></i> Tags</a></li>
+                <li><a href="#"><i class="fas fa-bookmark"></i> Saves</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="#"><i class="fas fa-building"></i> Companies</a></li>
+            </ul>
+            <div class="labs">
+                <h3>LABS</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> Jobs <span class="new">NEW</span></a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Discussions</a></li>
+                </ul>
+            </div>
+            <div class="collectives">
+                <h3>COLLECTIVES</h3>
+                <p>Communities for your favorite technologies. <a href="#">Explore all Collectives</a></p>
+            </div>
+            <div class="teams">
+                <h3>TEAMS</h3>
+                <p>Ask questions, find answers and collaborate at work with Stack Overflow for Teams. <a
+                        href="#">Explore Teams</a></p>
+                <p>Looking for your Teams?</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="top-questions">
+                <h2>Top Questions</h2>
+                <button class="ask-question">Ask Question</button>
+
+                <div class="question-filters">
+                    <button class="active">Interesting</button> <span class="count">145</span>
+                    <button>Bountied</button>
+                    <button>Hot</button>
+                    <button>Week</button>
+                    <button>Month</button>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 7 views</div>
+                    <h3>Replace function behaving weirdly - javascript</h3>
+                    <div class="tags">
+                        <span class="tag">javascript</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>Viraj Singh 2,159 asked 1 min ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 11 views</div>
+                    <h3>what is the usage section on a codemirror 6 language pack?</h3>
+                    <div class="tags">
+                        <span class="tag">javascript</span>
+                        <span class="tag">node.js</span>
+                        <span class="tag">npm</span>
+                        <span class="tag">codemirror</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>Pete Lomax 89 modified 1 min ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 6 views</div>
+                    <h3>DDDD: Can an Entity be also an Aggregate?</h3>
+                    <div class="tags">
+                        <span class="tag">domain-driven-design</span>
+                        <span class="tag">entity</span>
+                        <span class="tag">aggregateroot</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>javacomelava 49 modified 1 min ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 3 views</div>
+                    <h3>The data submitted through registration form in React wasn't inserted into the database and
+                        cannot be logged in to the system created with Laravel 11</h3>
+                    <div class="tags">
+                        <span class="tag">reactjs</span>
+                        <span class="tag">laravel</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>Charan Romi 1 asked 1 min ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 5 views</div>
+                    <h3>Why does the following SQL produces different results in MySQL-5.7.44 and MySQL-8.4.0?</h3>
+                    <div class="tags">
+                        <span class="tag">mysql</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>vbbararosh 3,614 modified 1 min ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 1 answer · 9 views</div>
+                    <h3>Google Chat App not receiving messages from some users in the workspace</h3>
+                    <div class="tags">
+                        <span class="tag">google-apps-script</span>
+                        <span class="tag">google-chat</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>Kiran Kumar 1 answered 2 mins ago</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="votes">0 votes · 0 answers · 7 views</div>
+                    <h3>Python script to cleanse Blood Pressure data</h3>
+                    <div class="tags">
+                        <span class="tag">python</span>
+                        <span class="tag">data-cleaning</span>
+                    </div>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/24" alt="User Avatar">
+                        <span>wijandrea 30.8k modified 2 mins ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="overflow-blog">
+                <h3>The Overflow Blog</h3>
+                <ul>
+                    <li><i class="fas fa-pencil-alt"></i> Reshaping the future of API platforms</li>
+                    <li><i class="fas fa-pencil-alt"></i> Between hyper-focus and burnout: Developing with ADHD</li>
+                </ul>
+            </div>
+
+            <div class="featured-on-meta">
+                <h3>Featured on Meta</h3>
+                <ul>
+                    <li><i class="fas fa-comment"></i> Our Partnership with OpenAI</li>
+                    <li><i class="fas fa-comment"></i> Imgur image URL migration: Coming soon to a Stack Exchange site
+                        near you!</li>
+                    <li><i class="fas fa-comment"></i> Should we burninate the [price] tag?</li>
+                    <li><i class="fas fa-comment"></i> Generative AI (e.g. ChatGPT) is banned</li>
+                </ul>
+            </div>
+
+            <div class="hot-meta-posts">
+                <h3>Hot Meta Posts</h3>
+                <ul>
+                    <li>78 What is the motivation to use Stack Overflow jobs over just using Indeed?</li>
+                </ul>
+            </div>
+
+            <div class="custom-filters">
+                <h3>Custom Filters</h3>
+                <button>Create a custom filter</button>
+            </div>
+
+            <div class="watched-tags">
+                <h3>Watched Tags</h3>
+                <p>Watch tags to curate your list of questions.</p>
+                <button>Watch a tag</button>
+            </div>
+
+            <div class="ignored-tags">
+                <h3>Ignored Tags</h3>
+            </div>
         </div>
     </div>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
