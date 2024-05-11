@@ -2,10 +2,8 @@ body{
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
-#login_panel{
-    color: orange;
-}
-#image_col{
+
+#image_login{
     margin: 0px;
     padding: 0px;
     display: inline-block;
