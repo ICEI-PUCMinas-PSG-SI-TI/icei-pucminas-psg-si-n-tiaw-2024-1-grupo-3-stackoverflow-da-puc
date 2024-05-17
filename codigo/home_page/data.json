@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Como Carregar Json em um tela",
+        "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
+        "tags": "javascript",
+        "user": "Falkin",
+        "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Outro Exemplo",
+        "desc": "Este é outro exemplo de como criar um cartão com JSON.",
+        "tags": "exemplo",
+        "user": "Usuário Exemplo",
+        "imgUrl": "https://example.com/image.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Mais um Exemplo",
+        "desc": "Este é mais um exemplo para demonstrar como funciona.",
+        "tags": "exemplo",
+        "user": "Usuário Exemplo",
+        "imgUrl": "https://example.com/another-image.jpg"
+    }
+]
