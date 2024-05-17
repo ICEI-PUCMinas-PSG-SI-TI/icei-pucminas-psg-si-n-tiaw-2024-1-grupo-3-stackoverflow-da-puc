@@ -5,22 +5,31 @@
         "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
         "tags": "javascript",
         "user": "Falkin",
-        "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg"
+        "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
+        "views": 5, 
+        "vote":42,
+        "answer":3
     },
     {
         "id": 2,
         "title": "Outro Exemplo",
         "desc": "Este é outro exemplo de como criar um cartão com JSON.",
-        "tags": "exemplo",
-        "user": "Usuário Exemplo",
-        "imgUrl": "https://example.com/image.jpg"
+        "tags": "css",
+        "user": "Quaquin",
+        "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
+        "views": 5, 
+        "vote":42,
+        "answer":3
     },
     {
         "id": 3,
         "title": "Mais um Exemplo",
         "desc": "Este é mais um exemplo para demonstrar como funciona.",
         "tags": "exemplo",
-        "user": "Usuário Exemplo",
-        "imgUrl": "https://example.com/another-image.jpg"
+        "user": "Invasor_zin",
+        "imgUrl": "https://i.scdn.co/image/ab67616d0000b27326cfad9e113db8d10cec233f",
+        "views": 5, 
+        "vote":42,
+        "answer":3
     }
 ]
