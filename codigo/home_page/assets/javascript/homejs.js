@@ -10,33 +10,31 @@ item.addEventListener('click', activeLink));
 // script ajax e XML 
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('data.json')
-        .then(response => response.json())
+    fetch('../json/data.json')
+        .then(res => res.json())
         .then(data => {
-            const frame = document.getElementById("dataDisplay");
+            const tela= document.getElementById("dataDisplay");
 
             data.forEach(item => {
                 // Criar um elemento de cartão para cada objeto
                 let newDiv = document.createElement("div");
-                newDiv.className = "card m-3";
+                newDiv.className = "card col-md-12 m-3";
                 newDiv.innerHTML = `
                     <div class="row">
-
-                        <div class="col-2">
-                        <div class="mx-3 mt-3">
-                        <p class=>${item.views} Views</p>
-                        <p class=>${item.answer} Answer</p>
-                        <p class=>${item.vote} Vote</p>
-                        </div>
-                        
+                        <div class="col-2" id="vote">
+                            <div class="ms-5 pt-4">
+                                <p><i class="bi bi-eye"></i> ${item.views}</p>
+                                <p><i class="bi bi-chat-dots"></i> ${item.answer}</p>
+                                <p><i class="bi bi-heart"></i> ${item.vote}</p>
+                            </div>
                         </div>
                         <div class="col-10">
-                            <div class="card">
-                            <div class="card-header"><h3>${item.title}</h3></div>
-                                <div class="card-body"><p>${item.desc}</p>
+                            <div class="border">
+                                <div class="card-header "><h3>${item.title}</h3></div>
+                                <div class="card-body  ""><p>${item.desc}</p>
                                     <div class="row ">
                                         <div class="col-md-9">
-                                            <span class="badge rounded-pill bg-danger"><p class="m-0">${item.tags}</p></span>
+                                            ${item.tags.map(tag => `<span class="badge rounded-pill bg-danger p-2 m-1"><p class="m-0">${tag}</p></span>`).join('')}
                                         </div>
                                         <div class="col-md-3">
                                             <img src="${item.imgUrl}" alt="User Image" id="userimg" class="user-img">
@@ -44,15 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                         </div>
                                     </div>
                                 </div>
-                                </div>
                             </div>
-                        </div>`;
+                        </div>
+                    </div>`;
                 
                 // Adicionar o cartão ao elemento com o ID "dataDisplay"
-                frame.appendChild(newDiv);
+                tela.appendChild(newDiv);
             });
         })
         .catch(error => console.error("Error fetching JSON data:", error));
 });
-
-
