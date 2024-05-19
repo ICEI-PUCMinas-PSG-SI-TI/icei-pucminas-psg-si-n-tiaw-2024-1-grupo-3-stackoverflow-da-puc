@@ -56,17 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
             newDiv.className = "card col-md-12 m-3";
             newDiv.innerHTML = `
                 <div class="row">
-                    <div class="col-2 text-center" id="vote">
-                        <div class="ms-0 pt-4">
+                    <div class="col-3 col-md-2  text-center" id="vote">
+                        <div class="mt-2 mb-2 mt-md-0 pt-4">
                             <p><i class="bi bi-eye"></i> ${item.views}</p>
                             <p><i class="bi bi-chat-dots"></i> ${item.answer}</p>
-                            <p><i class="bi bi-heart"></i> ${item.vote}</p>
+                            <p class="m-0"><i class="bi bi-heart"></i> ${item.vote}</p>
                         </div>
                     </div>
-                    <div class="col-10">
+                    <div class="col-9 col-md-10">
                         <div class="border">
-                            <div class="card-header"><h3>${item.title}</h3></div>
-                            <div class="card-body"><p>${item.desc}</p>
+                            <div class="card-header p-1"><h3>${item.title}</h3></div>
+                            <div class="card-body p-1"><p>${item.desc}</p>
                                 <div class="row">
                                     <div class="col-md-9">
                                         ${item.tags.map(tag => `<span class="badge rounded-pill bg-danger p-2 m-1"><p class="m-0">${tag}</p></span>`).join('')}
