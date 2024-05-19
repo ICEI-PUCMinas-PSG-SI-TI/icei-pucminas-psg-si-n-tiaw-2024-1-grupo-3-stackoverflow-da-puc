@@ -1,0 +1,21 @@
+main {
+    padding: 40px;
+}
+
+
+.card {
+    padding: 10px;
+    border: 1px solid gray;
+    width: 45%;
+    margin-bottom: 10px;
+}
+
+.card input {
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
