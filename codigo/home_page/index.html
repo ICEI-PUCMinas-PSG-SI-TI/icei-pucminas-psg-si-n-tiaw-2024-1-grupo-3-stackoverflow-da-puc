@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
             <div class="col-1 p-0" id="aside"><!--Começo do Aside -->
                 <div class="navigation">
@@ -56,20 +56,25 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-9 offset-2"><!--Copiem o offset 3 fé -->
+            <div class="col-12 col-md-9 offset-2"><!--Copiem o offset 3 fé -->
                 <div class="row m-0 p-0">
-                    <div class="col-10">
+                    <div class="col-10"><!--Barra de pesquisa-->
                         <div class="input-group mb-3 pt-4">
                             <input type="text" class="form-control" placeholder="Search a question" aria-label="Recipient's username" aria-describedby="button-addon2" id="busca">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                                     <ion-icon name="search-outline"></ion-icon>
-                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12"><!--botão para postar uma pergunta-->
                         <button class="btn btn-danger">postar</button>
+                    </div>
+                    <div class="col-4 col-md-3 offset-md-7 pt-md-0 pt-4" id="filterdisplay"><!--Filtro-->
+                        <select class="form-select" id="Seletor" aria-label="Default select example">
+                            <option selected>filtro</option>
+
+                        </select>
                     </div>
                 </div>
                 <div class="col-10">
