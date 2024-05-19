@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="col-9 col-md-10">
                         <div class="border">
-                            <div class="card-header p-1"><h3>${item.title}</h3></div>
-                            <div class="card-body p-1"><p>${item.desc}</p>
+                            <div class="card-header p-2"><h4>${item.title}</h4></div>
+                            <div class="card-body p-2"><p>${item.desc}</p>
                                 <div class="row">
                                     <div class="col-md-9">
                                         ${item.tags.map(tag => `<span class="badge rounded-pill bg-danger p-2 m-1"><p class="m-0">${tag}</p></span>`).join('')}
