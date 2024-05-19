@@ -1,18 +1,31 @@
-function login(){
-    var email = document.getElementById('loginUsername').value;
-    var password = document.getElementById('loginPassword').value;
+$(document).ready(function(){
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/login', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onload = function() {
-        if (this.status === 200) {            let response = JSON.parse(this.responseText);
-            if(response.success){
-                window.location.href = '/codigo/home_page/index.html';
-            } else {
-                alert("Email ou senha incorretos");
-            }
+    function pegaCadastro() {
+        return JSON.parse(localStorage.getItem("cadastro")) || [];
+    }
+
+    function salvarCadastro(cadastro) {
+        localStorage.setItem("cadastro", JSON.stringify(cadastro));
+    }
+
+    $("#loginbtn").click(function() {
+        var cadastro = pegaCadastro();
+        var username = $('#loginUsername').val().trim();
+        var password = $('#loginPassword').val().trim();
+
+        var usuarioEncontrado = cadastro.find(function(user) {
+            return user.nome === username && user.senha === password;
+        });
+        if (usuarioEncontrado){
+            alert("Login realizado com sucesso");
+            window.location.href = "../home_page/index.html"
+            cadastro.forEach(cadastro => {
+                cadastro.login = true
+            });
+            salvarCadastro(cadastro);
         }
-    };
-    xhr.send(JSON.stringify({ email: email, password: password }));
-}
+        else{
+            alert("Erro ao realizar login");
+        }
+    });
+});

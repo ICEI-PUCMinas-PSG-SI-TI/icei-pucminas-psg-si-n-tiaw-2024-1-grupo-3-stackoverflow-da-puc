@@ -25,9 +25,11 @@ $(document).ready(function(){
             nome: name,
             email: email,
             id: id,
-            senha: password
+            senha: password,
+            login: false
         });
         salvarCadastro(cadastro);
-        console.log(cadastro);
+        alert("Conta cadastrada com sucesso!")
+        window.location.href = "../login_page/index.html"
     });
 });

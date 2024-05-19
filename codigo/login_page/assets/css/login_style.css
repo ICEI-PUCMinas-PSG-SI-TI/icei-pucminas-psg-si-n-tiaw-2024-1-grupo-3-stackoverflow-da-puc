@@ -6,11 +6,8 @@
 #register_button{
     font-size: small;
 }
-#login_button{
+#loginbtn{
    padding: 10px 80px 10px 80px;
-}
-#lost_password{
-    font-size: small;
 }
 #login_username{
     margin-top: 20px;
