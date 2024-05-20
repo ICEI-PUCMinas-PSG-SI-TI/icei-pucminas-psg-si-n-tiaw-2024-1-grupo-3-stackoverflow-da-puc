@@ -6,19 +6,19 @@
 #login_return{
     font-size: small;
 }
-#register_button{
+#registerbtn{
    padding: 10px 80px 10px 80px;
 }
 #new_username{
     margin-top: 20px;
 }
 #login_title{
-    margin-top: 100px;
+    margin-top: 80px;
     font-family: 'Times New Roman', Times, serif;
 }
 /* Mesmo da pagina Login */
 #title_form{
-    margin-top: 130px;
+    margin-top: 50px;
 }
 #image_login{
     margin: 0px;

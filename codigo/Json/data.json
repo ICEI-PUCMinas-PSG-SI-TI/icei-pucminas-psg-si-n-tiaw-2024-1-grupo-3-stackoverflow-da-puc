@@ -14,7 +14,7 @@
         "id": 2,
         "title": "Outro Exemplo",
         "desc": "Este é outro exemplo de como criar um cartão com JSON.",
-        "tags": ["CSS"],
+        "tags": ["CSS","Javascript"],
         "user": "Quaquin",
         "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
         "views": 5, 
@@ -28,6 +28,17 @@
         "tags": ["Typescript"],
         "user": "Invasor_zin",
         "imgUrl": "https://i.scdn.co/image/ab67616d0000b27326cfad9e113db8d10cec233f",
+        "views": 5, 
+        "vote":42,
+        "answer":3
+    },
+    {
+        "id": 4,
+        "title": "Como Carregar um progrma em C#",
+        "desc": "Este é mais um exemplo para demonstrar como funciona.",
+        "tags": ["C#"],
+        "user": "Kilde_luxuria",
+        "imgUrl": "https://i.pinimg.com/originals/aa/bb/65/aabb650570c3994dde77337d32aaebfd.jpg",
         "views": 5, 
         "vote":42,
         "answer":3
