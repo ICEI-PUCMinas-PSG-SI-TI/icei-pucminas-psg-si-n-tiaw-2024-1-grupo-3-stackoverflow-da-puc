@@ -3,19 +3,20 @@
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
-#register_button{
+#login_return{
     font-size: small;
 }
-#loginbtn{
+#registerbtn{
    padding: 10px 80px 10px 80px;
 }
-#login_username{
+#new_username{
     margin-top: 20px;
 }
 #login_title{
-    margin-top: 100px;
+    margin-top: 80px;
     font-family: 'Times New Roman', Times, serif;
 }
+/* Mesmo da pagina Login */
 #title_form{
     margin-top: 50px;
 }
