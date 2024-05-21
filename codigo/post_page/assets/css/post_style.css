@@ -1,3 +1,131 @@
+@import url('https://fonts.cdnfonts.com/css/airstrike');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    margin: 0;
+}
+
+/* Estilo do aside */
+#aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 180px;
+    z-index: 999;
+}
+
+.navigation {
+    position: relative;
+    height: 100%;
+    width: 70px;
+    background: #ffffff;
+    box-shadow: 10px 0 0 #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.navigation:hover {
+    width: 100%;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 70px;
+    margin: 0;
+}
+
+.navigation ul li {
+    list-style: none;
+}
+
+.navigation ul li a {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+}
+
+.navigation ul li a .icon {
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.5rem;
+}
+
+.navigation ul li a .title {
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active {
+    background: #dc3545;
+}
+
+#userimg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid #000000 1px;
+    object-fit: cover;
+}
+
+#logopuc {
+    width: 4rem;
+    margin: 5px;
+}
+
+#teste {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+    align-items: end;
+}
+
+#teste p {
+    padding-left: 10px;
+    font-family: 'Airstrike', sans-serif;
+}
+
+.logoutitem {
+    padding-left: 5px;
+    padding-top: 240px;
+    margin: 0;
+}
+.icondata{
+    width: 20px;
+    height: 20px;
+}
+@media (max-width: 768px) {
+    #aside{
+        display: none;
+    }
+}
+
+.FotoPerfil{
+    height:150px;
+    margin-left:165px;
+}
+
+.infosabaixoperfil ul li{
+    margin-left:170px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+
 main {
     padding: 40px;
 }
