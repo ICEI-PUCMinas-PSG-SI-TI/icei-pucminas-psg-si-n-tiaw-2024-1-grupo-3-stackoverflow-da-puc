@@ -43,8 +43,8 @@ $(document).ready(function() {
             nome: name,
             email: email,
             id: id,
+            db_id: cadastro.length + 1,
             senha: password,
-            login: false
         });
         salvarCadastro(cadastro);
         alert("Conta cadastrada com sucesso!");

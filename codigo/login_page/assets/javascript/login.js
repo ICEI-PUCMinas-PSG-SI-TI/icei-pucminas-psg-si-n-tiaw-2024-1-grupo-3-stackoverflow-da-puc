@@ -4,8 +4,8 @@ $(document).ready(function(){
         return JSON.parse(localStorage.getItem("cadastro")) || [];
     }
 
-    function salvarCadastro(cadastro) {
-        localStorage.setItem("cadastro", JSON.stringify(cadastro));
+    function salvaUsuarioLogado(usuarioLogado) {
+        localStorage.setItem("usuario_logado", JSON.stringify(usuarioLogado));
     }
 
     $("#loginbtn").click(function() {
@@ -19,10 +19,7 @@ $(document).ready(function(){
         if (usuarioEncontrado){
             alert("Login realizado com sucesso");
             window.location.href = "../home_page/index.html"
-            cadastro.forEach(cadastro => {
-                cadastro.login = true
-            });
-            salvarCadastro(cadastro);
+            salvaUsuarioLogado(usuarioEncontrado);
         }
         else{
             alert("Erro ao realizar login");
