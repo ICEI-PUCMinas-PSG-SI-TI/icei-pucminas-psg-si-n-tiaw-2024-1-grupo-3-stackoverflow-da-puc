@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('../json/data.json')
         .then(res => res.json())
         .then(jsonData => {
-            data = jsonData;
+            data = jsonData.DataQuestion;
             displayData(data);
             tagsfiltro(data);
         })
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.forEach(item => {
             let newDiv = document.createElement("div");
             newDiv.className = "card col-md-12 m-3";
-            newDiv.innerHTML = `
+            newDiv.innerHTML = `<a href="../question_page/index.html?id=${item.id}" class="text-dark  text-decoration-none">
                 <div class="row">
                     <div class="col-3 col-md-2  text-center" id="vote">
                         <div class="mt-2 mb-2 mt-md-0 pt-4">
@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
                     </div>
-                </div>`;
+                </div>
+            </a>`;
             tela.appendChild(newDiv);
         });
     }

@@ -1,4 +1,4 @@
-[
+{"DataQuestion":[
     {
         "id": 1,
         "title": "Como Carregar Json em um tela",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "title": "Como Carregar um progrma em C#",
+        "title": "Como Carregar um programa em C#",
         "desc": "Este é mais um exemplo para demonstrar como funciona.",
         "tags": ["C#"],
         "user": "Kilde_luxuria",
@@ -43,4 +43,15 @@
         "vote":42,
         "answer":3
     }
-]
+], 
+ "DataAnwser":[
+    {
+        "question_id": 1,
+        "anwser":["teste do sistema de mostrar Respostas","Carai mano tu é burro","Me odeio"] 
+    }, 
+    {
+        "question_id": 2,
+        "anwser":["teste do sistema de mostrar Respostas"]
+    }
+ ]
+}
