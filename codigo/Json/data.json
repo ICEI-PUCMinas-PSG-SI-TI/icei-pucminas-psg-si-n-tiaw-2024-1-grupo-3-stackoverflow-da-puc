@@ -1,8 +1,19 @@
-{"DataQuestion":[
+{
+    "DataAccount":[
+        {
+            "idConta": 1522645,
+            "nomeConta": "Samucael",
+            "senhaConta": "seila1234",
+            "emailConta": "email@gmail.com",
+            "loginStatus": false
+        }
+    ],
+    "DataQuestion":[
     {
         "id": 1,
         "title": "Como Carregar Json em um tela",
         "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
+        "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
         "tags": ["Javascript","HTML","CSS"],
         "user": "Falkin",
         "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
@@ -14,6 +25,7 @@
         "id": 2,
         "title": "Outro Exemplo",
         "desc": "Este é outro exemplo de como criar um cartão com JSON.",
+        "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
         "tags": ["CSS","Javascript"],
         "user": "Quaquin",
         "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
@@ -47,11 +59,11 @@
  "DataAnwser":[
     {
         "question_id": 1,
-        "anwser":["teste do sistema de mostrar Respostas","Carai mano tu é burro","Me odeio"] 
+        "resposta":["teste do sistema de mostrar Respostas","Carai mano tu é burro","Me odeio"] 
     }, 
     {
         "question_id": 2,
-        "anwser":["teste do sistema de mostrar Respostas"]
+        "resposta":["teste do sistema de mostrar Respostas"]
     }
  ]
 }
