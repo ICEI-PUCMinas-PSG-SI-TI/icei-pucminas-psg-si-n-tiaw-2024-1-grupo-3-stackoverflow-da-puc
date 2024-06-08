@@ -15,6 +15,8 @@ function handlePostQuetion(event) {
     title: title,
     question: question,
     tags: tags,
+    upvotes: 0,
+    downvotes: 0,
   };
 
   if (questions) {
@@ -31,4 +33,6 @@ function handlePostQuetion(event) {
     question_json.id = 1;
     localStorage.setItem("questions", JSON.stringify([question_json]));
   }
+
+  location.reload();
 }
