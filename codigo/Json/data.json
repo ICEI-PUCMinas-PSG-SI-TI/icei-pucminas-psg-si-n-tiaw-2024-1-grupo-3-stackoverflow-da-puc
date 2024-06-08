@@ -1,69 +1,77 @@
 {
-    "DataAccount":[
-        {
-            "idConta": 1522645,
-            "nomeConta": "Samucael",
-            "senhaConta": "seila1234",
-            "emailConta": "email@gmail.com",
-            "loginStatus": false
-        }
-    ],
-    "DataQuestion":[
+  "DataAccount": [
     {
-        "id": 1,
-        "title": "Como Carregar Json em um tela",
-        "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
-        "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
-        "tags": ["Javascript","HTML","CSS"],
-        "user": "Falkin",
-        "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
-        "views": 5, 
-        "vote":42,
-        "answer":3
-    },
-    {
-        "id": 2,
-        "title": "Outro Exemplo",
-        "desc": "Este é outro exemplo de como criar um cartão com JSON.",
-        "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
-        "tags": ["CSS","Javascript"],
-        "user": "Quaquin",
-        "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
-        "views": 5, 
-        "vote":42,
-        "answer":32
-    },
-    {
-        "id": 3,
-        "title": "Mais um Exemplo",
-        "desc": "Este é mais um exemplo para demonstrar como funciona.",
-        "tags": ["Typescript"],
-        "user": "Invasor_zin",
-        "imgUrl": "https://i.scdn.co/image/ab67616d0000b27326cfad9e113db8d10cec233f",
-        "views": 5, 
-        "vote":42,
-        "answer":3
-    },
-    {
-        "id": 4,
-        "title": "Como Carregar um programa em C#",
-        "desc": "Este é mais um exemplo para demonstrar como funciona.",
-        "tags": ["C#"],
-        "user": "Kilde_luxuria",
-        "imgUrl": "https://i.pinimg.com/originals/aa/bb/65/aabb650570c3994dde77337d32aaebfd.jpg",
-        "views": 5, 
-        "vote":42,
-        "answer":3
+      "idConta": 1522645,
+      "nomeConta": "Samucael",
+      "senhaConta": "seila1234",
+      "emailConta": "email@gmail.com",
+      "loginStatus": false
     }
-], 
- "DataAnwser":[
+  ],
+  "DataQuestion": [
     {
-        "question_id": 1,
-        "resposta":["teste do sistema de mostrar Respostas","Carai mano tu é burro","Me odeio"] 
-    }, 
+      "id": 1,
+      "title": "Como Carregar Json em um tela",
+      "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
+      "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
+      "tags": ["Javascript", "HTML", "CSS"],
+      "user": "Falkin",
+      "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
+      "views": 5,
+      "upvotes": 42,
+      "downvotes": 42,
+      "answer": 3
+    },
     {
-        "question_id": 2,
-        "resposta":["teste do sistema de mostrar Respostas"]
+      "id": 2,
+      "title": "Outro Exemplo",
+      "desc": "Este é outro exemplo de como criar um cartão com JSON.",
+      "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
+      "tags": ["CSS", "Javascript"],
+      "user": "Quaquin",
+      "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
+      "views": 5,
+      "upvotes": 42,
+      "downvotes": 42,
+      "answer": 32
+    },
+    {
+      "id": 3,
+      "title": "Mais um Exemplo",
+      "desc": "Este é mais um exemplo para demonstrar como funciona.",
+      "tags": ["Typescript"],
+      "user": "Invasor_zin",
+      "imgUrl": "https://i.scdn.co/image/ab67616d0000b27326cfad9e113db8d10cec233f",
+      "views": 5,
+      "upvotes": 42,
+      "downvotes": 42,
+      "answer": 3
+    },
+    {
+      "id": 4,
+      "title": "Como Carregar um programa em C#",
+      "desc": "Este é mais um exemplo para demonstrar como funciona.",
+      "tags": ["C#"],
+      "user": "Kilde_luxuria",
+      "imgUrl": "https://i.pinimg.com/originals/aa/bb/65/aabb650570c3994dde77337d32aaebfd.jpg",
+      "views": 5,
+      "upvotes": 42,
+      "downvotes": 42,
+      "answer": 3
     }
- ]
+  ],
+  "DataAnwser": [
+    {
+      "question_id": 1,
+      "resposta": [
+        "teste do sistema de mostrar Respostas",
+        "Carai mano tu é burro",
+        "Me odeio"
+      ]
+    },
+    {
+      "question_id": 2,
+      "resposta": ["teste do sistema de mostrar Respostas"]
+    }
+  ]
 }
