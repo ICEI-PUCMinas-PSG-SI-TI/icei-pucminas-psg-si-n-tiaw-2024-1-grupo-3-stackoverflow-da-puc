@@ -59,6 +59,29 @@ function handleDownvote(event) {
   localStorage.setItem("questions", JSON.stringify(updatedQuestions));
 }
 
+function handleSaveQuestion(event) {
+  const questionId = event.target.getAttribute("data-id");
+
+  if (!localStorage.getItem("saved-questions")) {
+    localStorage.setItem("saved-questions", JSON.stringify([]));
+  }
+
+  const savedQuestions = JSON.parse(localStorage.getItem("saved-questions"));
+
+  if (savedQuestions.includes(questionId)) {
+    const updatedSavedQuestions = savedQuestions.filter(
+      (savedQuestionId) => savedQuestionId != questionId
+    );
+    localStorage.setItem(
+      "saved-questions",
+      JSON.stringify(updatedSavedQuestions)
+    );
+  } else {
+    savedQuestions.push(questionId);
+    localStorage.setItem("saved-questions", JSON.stringify(savedQuestions));
+  }
+}
+
 function displayQuestion(question) {
   const tela = document.getElementById("MostrarPergunta");
   let params = new URLSearchParams(location.search);
@@ -112,6 +135,15 @@ function displayQuestion(question) {
             >
                 <i class="bi bi-arrow-down-circle-fill h1" data-id="${id}"></i>
             </button>
+
+            <button
+              type="button"
+              class="btn btn-transparent text-danger"
+              id="question-save"
+              data-id="${id}"
+            >
+            <i class="bi bi-box-arrow-down h1" data-id="${id}"></i>
+            </button>
             </div>
             <div class="col-md-6">
             <p class="font-monospace p-3" id="questionCode">
@@ -127,7 +159,9 @@ function displayQuestion(question) {
 
   const up_vote = document.getElementById("question-upVote");
   const down_vote = document.getElementById("question-downVote");
+  const save_question = document.getElementById("question-save");
 
+  save_question.addEventListener("click", handleSaveQuestion);
   up_vote.addEventListener("click", handleUpvote);
   down_vote.addEventListener("click", handleDownvote);
 }
