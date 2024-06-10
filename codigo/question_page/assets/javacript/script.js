@@ -95,9 +95,7 @@ function displayQuestion(question) {
         <div class="row">
         <div class="col-md-10 h3" id="titulo">${question[pId].title}</div>
         </div>
-        <div>
-        <div class="d-flex justify-content-start">
-            <div style="display: flex;">
+        <div class="d-inline-flex flex-wrap pb-3">
             <div>
                 <img src="${question[pId].imgUrl}" id="userimg" />
                 <span class="pe-4" id="userPergunta">${
@@ -105,14 +103,15 @@ function displayQuestion(question) {
                 }</span>
             </div>
             <div>
-                <i class="bi bi-eye-fill h4"></i>
+                <i class="bi bi-eye-fill h5"></i>
                 <span class="pe-4" id="views">${question[pId].views}</span>
             </div>
-            <div style="display: flex">
-                <i class="bi bi-hand-thumbs-down-fill"></i>
-                <span>${question[pId].upvotes} upvotes</span>
-
-                <i class="bi bi-hand-thumbs-up-fill"></i>
+            <div>
+                <i class="bi bi-hand-thumbs-down-fill pe-1"></i>
+                <span class="pe-4">${question[pId].upvotes} upvotes</span>
+            </div>
+            <div>
+                <i class="bi bi-hand-thumbs-up-fill pe-1"></i>
                 <span>${question[pId].downvotes} downvotes</span>
             </div>
             </div>
@@ -164,4 +163,36 @@ function displayQuestion(question) {
   save_question.addEventListener("click", handleSaveQuestion);
   up_vote.addEventListener("click", handleUpvote);
   down_vote.addEventListener("click", handleDownvote);
+}
+
+async function CriarPerguntas(novaPergunta) {
+  const url = 'http://localhost:3000/DataAnwser/';
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(novaPergunta)
+  };
+
+  try {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      console.log("Resposta enviada com sucesso");
+    } else {
+      console.log("Falha na criação da resposta");
+    }
+  } catch (error) {
+    console.error("Erro na solicitação:", error);
+  }
+}
+
+document.getElementById('perguntaForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Previne a submissão padrão do formulário
+  const novaPergunta = {
+    pergunta: document.getElementById('pergunta').value
+  };
+  CriarPerguntas(novaPergunta);
+});
+
+function enviaResposta(){
+  const resposta = document.getElementById("resposta").value;
 }
