@@ -10,23 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function displayAnswers(answers) {
   const tela = document.getElementById("MostrarRepostas");
-  let params = new URLSearchParams(location.search);
-  let id = parseInt(params.get("id"));
   tela.innerHTML = "";
 
-  const filteredAnswers = answers.filter(
-    (answerSet) => answerSet.question_id === id
-  );
+  const params = new URLSearchParams(location.search);
+  const questionId = parseInt(params.get("id"));
 
-  filteredAnswers.forEach((answerSet) => {
-    let newDiv = +document.createElement("div");
-    newDiv.innerHTML = `
-                    ${answerSet.anwser
-                      .map((answer) => `<p>${answer}</p>`)
-                      .join("")}
-                    `;
-    tela.appendChild(newDiv);
-  });
+  const answersForQuestion = answers.find((answerSet) => answerSet.question_id === questionId);
+  if (answersForQuestion) {
+      answersForQuestion.resposta.forEach((answer) => {
+          let newDiv = document.createElement("div");
+          newDiv.innerHTML = `<p>${answer}</p>`;
+          tela.appendChild(newDiv);
+      });
+  }
 }
 
 function handleUpvote(event) {
@@ -165,34 +161,37 @@ function displayQuestion(question) {
   down_vote.addEventListener("click", handleDownvote);
 }
 
-async function CriarPerguntas(novaPergunta) {
-  const url = 'http://localhost:3000/DataAnwser/';
-  const options = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(novaPergunta)
+async function enviarResposta() {
+  const respostaTexto = document.querySelector("#MostrarPergunta textarea[name='resposta']").value;
+  const codigoResposta = document.querySelector("#MostrarPergunta textarea[name='codigo-resposta']").value;
+  const questionId = parseInt(new URLSearchParams(location.search).get("id"));
+
+  const novaResposta = {
+      question_id: questionId,
+      resposta: [respostaTexto]
   };
+
+  if (codigoResposta.trim() !== "") {
+      novaResposta.resposta.push(codigoResposta);
+  }
 
   try {
-    const response = await fetch(url, options);
-    if (response.ok) {
-      console.log("Resposta enviada com sucesso");
-    } else {
-      console.log("Falha na criação da resposta");
-    }
+      const response = await fetch("http://localhost:3000/DataAnwser", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(novaResposta)
+      });
+
+      if (response.ok) {
+          console.log("Resposta enviada com sucesso");
+          const jsonData = await response.json();
+          displayAnswers([jsonData]);
+      } else {
+          console.error("Falha ao enviar resposta");
+      }
   } catch (error) {
-    console.error("Erro na solicitação:", error);
+      console.error("Erro na solicitação:", error);
   }
-}
-
-document.getElementById('perguntaForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Previne a submissão padrão do formulário
-  const novaPergunta = {
-    pergunta: document.getElementById('pergunta').value
-  };
-  CriarPerguntas(novaPergunta);
-});
-
-function enviaResposta(){
-  const resposta = document.getElementById("resposta").value;
 }
