@@ -5,16 +5,31 @@
       "nomeConta": "Samucael",
       "senhaConta": "seila1234",
       "emailConta": "email@gmail.com",
-      "loginStatus": false
+      "loginStatus": true,
+      "imgUrl": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/ramon-dino-mr-olympia-e1699131023342.jpeg",
+      "id": "79ca"
+    },
+    {
+      "idConta": 451,
+      "nomeConta": "falkin",
+      "senhaConta": "seila123",
+      "emailConta": "email@gmail.com",
+      "loginStatus": false,
+      "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
+      "id": "b590"
     }
   ],
   "DataQuestion": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Como Carregar Json em um tela",
       "desc": "Gostaria de saber como faço para imprimir um arquivo json na tela pelo javascript.",
       "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
-      "tags": ["Javascript", "HTML", "CSS"],
+      "tags": [
+        "Javascript",
+        "HTML",
+        "CSS"
+      ],
       "user": "Falkin",
       "imgUrl": "https://i.pinimg.com/736x/77/49/89/7749897881bd7694695dc2df6049ce69.jpg",
       "views": 5,
@@ -23,11 +38,15 @@
       "answer": 3
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Outro Exemplo",
       "desc": "Este é outro exemplo de como criar um cartão com JSON.",
       "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
-      "tags": ["CSS", "Javascript"],
+      "tags": [
+        "CSS",
+        "Javascript",
+        "portugol"
+      ],
       "user": "Quaquin",
       "imgUrl": "https://ih1.redbubble.net/image.3980740729.3465/raf,360x360,075,t,fafafa:ca443f4786.jpg",
       "views": 5,
@@ -36,42 +55,77 @@
       "answer": 32
     },
     {
-      "id": 3,
-      "title": "Mais um Exemplo",
-      "desc": "Este é mais um exemplo para demonstrar como funciona.",
-      "tags": ["Typescript"],
-      "user": "Invasor_zin",
-      "imgUrl": "https://i.scdn.co/image/ab67616d0000b27326cfad9e113db8d10cec233f",
+      "id": "3",
+      "title": "Outro Exemplo",
+      "desc": "Este é outro exemplo de como criar um cartão com JSON.",
+      "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
+      "tags": [
+        "CSS",
+        "Javascript"
+      ],
+      "user": "Musashi",
+      "imgUrl": "https://i.scdn.co/image/ab67616d0000b2734f0f9ef8c709c8451f0088df",
       "views": 5,
       "upvotes": 42,
       "downvotes": 42,
-      "answer": 3
+      "answer": 32
     },
     {
-      "id": 4,
-      "title": "Como Carregar um programa em C#",
-      "desc": "Este é mais um exemplo para demonstrar como funciona.",
-      "tags": ["C#"],
-      "user": "Kilde_luxuria",
-      "imgUrl": "https://i.pinimg.com/originals/aa/bb/65/aabb650570c3994dde77337d32aaebfd.jpg",
+      "id": "4",
+      "title": "Mais um Outro Exemplo",
+      "desc": "Este é outro exemplo de como criar um cartão com JSON.",
+      "descCodigo": "i = 10;\nwhile (i != 0)\n{\n    Console.WriteLine(i);\n    i--;\n    if (i == 0)\n    {\n        Console.WriteLine('Feliz Ano Novo!');\n    }\n}\n\nConsole.ReadKey();",
+      "tags": [
+        "C#"
+      ],
+      "user": "Samucael",
+      "imgUrl": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/ramon-dino-mr-olympia-e1699131023342.jpeg",
       "views": 5,
       "upvotes": 42,
       "downvotes": 42,
-      "answer": 3
+      "answer": 32
     }
   ],
   "DataAnwser": [
     {
+      "id": "97c9",
       "question_id": 1,
       "resposta": [
-        "teste do sistema de mostrar Respostas",
-        "Carai mano tu é burro",
-        "Me odeio"
-      ]
+        "teste"
+      ],
+      "idconta": 1522645
     },
     {
-      "question_id": 2,
-      "resposta": ["teste do sistema de mostrar Respostas"]
+      "id": "af6e",
+      "question_id": 1,
+      "resposta": [
+        "Eu volto, eu volto, eu volto e você já não crê\nVoltar parte do tempo é só o que eu sei fazer\nDifícil acreditar em mim, mas tem que acreditar\nQue já passei por tanto, tanto para te salvar\n\nEu volto, eu volto, eu volto e você já não crê\nVivendo em loop, a sanidade eu vou perder\nDifícil acreditar em mim, mas tem que acreditar\nQue já passei por tanto, tanto para te salvar"
+      ],
+      "idconta": 1522645
+    },
+    {
+      "id": "8e68",
+      "question_id": 1,
+      "resposta": [
+        "teste"
+      ],
+      "idconta": 1522645
+    },
+    {
+      "id": "946c",
+      "question_id": 1,
+      "resposta": [
+        "sessão de duality amanhã"
+      ],
+      "idconta": 1522645
+    },
+    {
+      "id": "174f",
+      "question_id": 1,
+      "resposta": [
+        "Criar metodo para alterar o id aumaticamente "
+      ],
+      "idconta": 451
     }
   ]
 }

@@ -3,27 +3,33 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((res) => res.json())
     .then((jsonData) => {
       displayQuestion(jsonData.DataQuestion);
-      displayAnswers(jsonData.DataAnwser);
+      displayAnswers(jsonData.DataAnwser,jsonData.DataAccount);
     })
     .catch((error) => console.error("Error fetching JSON data:", error));
 });
 
-function displayAnswers(answers) {
+function displayAnswers(answers, accounts) {
   const tela = document.getElementById("MostrarRepostas");
   tela.innerHTML = "";
 
   const params = new URLSearchParams(location.search);
   const questionId = parseInt(params.get("id"));
 
-  const answersForQuestion = answers.find((answerSet) => answerSet.question_id === questionId);
-  if (answersForQuestion) {
-      answersForQuestion.resposta.forEach((answer) => {
+  const answersForQuestion = answers.filter((answerSet) => answerSet.question_id === questionId);
+  if (answersForQuestion.length > 0) {
+      answersForQuestion.forEach((answer) => {
           let newDiv = document.createElement("div");
-          newDiv.innerHTML = `<p>${answer}</p>`;
+          const account = accounts.find(acc => acc.idConta === answer.idconta);
+          const formattedAnswer = answer.resposta.map(line => line.replace(/\n/g, "<br>")).join(""); // Substituir quebras de linha
+          newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${formattedAnswer}</p></div><div class="col-3"><img src="${account.imgUrl}" id="userimg"><span class="m-1">${account.nomeConta}</span></div></div>`;
           tela.appendChild(newDiv);
       });
+  } else {
+      let newDiv = document.createElement("div");
+      newDiv.innerHTML = "<p>Nenhuma resposta encontrada para esta pergunta.</p>";
+      tela.appendChild(newDiv);
   }
-}
+}displayAnswers(jsonData.DataAnwser,jsonData.DataAccount)
 
 function handleUpvote(event) {
   const questionId = event.target.getAttribute("data-id");
@@ -84,7 +90,7 @@ function displayQuestion(question) {
   let id = parseInt(params.get("id"));
   tela.innerHTML = "";
 
-  const pId = params.toString().indexOf("id");
+  const pId = id-1;
 
   let titulo = document.createElement("div");
   titulo.innerHTML = `
@@ -162,18 +168,14 @@ function displayQuestion(question) {
 }
 
 async function enviarResposta() {
-  const respostaTexto = document.querySelector("#MostrarPergunta textarea[name='resposta']").value;
-  const codigoResposta = document.querySelector("#MostrarPergunta textarea[name='codigo-resposta']").value;
+  const respostaTexto = document.querySelector("#respostaTexto").value;
   const questionId = parseInt(new URLSearchParams(location.search).get("id"));
 
   const novaResposta = {
       question_id: questionId,
-      resposta: [respostaTexto]
+      resposta: [respostaTexto],
+      idconta: 451
   };
-
-  if (codigoResposta.trim() !== "") {
-      novaResposta.resposta.push(codigoResposta);
-  }
 
   try {
       const response = await fetch("http://localhost:3000/DataAnwser", {
@@ -187,11 +189,21 @@ async function enviarResposta() {
       if (response.ok) {
           console.log("Resposta enviada com sucesso");
           const jsonData = await response.json();
-          displayAnswers([jsonData]);
+          adicionarResposta(jsonData);
       } else {
           console.error("Falha ao enviar resposta");
       }
   } catch (error) {
       console.error("Erro na solicitação:", error);
   }
+}
+
+function adicionarResposta(resposta) {
+  const telaResposta = document.getElementById("MostrarRepostas");
+
+  const novaDivResposta = document.createElement("div");
+  novaDivResposta.classList.add("resposta");
+  novaDivResposta.innerHTML = `<p>${resposta.resposta}</p>`;
+
+  telaResposta.appendChild(novaDivResposta);
 }

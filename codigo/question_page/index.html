@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid ">
         <div class="row">
-            <div class="col-1 p-0" id="aside"><!--Começo do Aside -->
+            <div class="col-1 p-0" id="aside">
                 <div class="navigation">
                     <span class="icon">
                         <a id="teste">
@@ -60,9 +60,9 @@
                         </li>
                     </ul>
                 </div>
-            </div> <!-- Fim do Aside -->
-            <div class="col-12 col-md-9 offset-md-2"><!--Copiem o offset 2 fé -->
-                <div class="row"> <!-- Barra de Pesquisa -->
+            </div>
+            <div class="col-12 col-md-9 offset-md-2">
+                <div class="row">
                     <div class="col-10">
                         <div class="input-group mb-3 pt-4">
                             <input type="text" class="form-control" placeholder="Search a question"
@@ -76,54 +76,38 @@
                     </div>
                 </div>
 
-
-                <!--Div Pergunta Samuel-->
                 <div id="MostrarPergunta" class="row">
-                        <!--Inserção por Javascript-->
-
+                    <!--Inserção por Javascript-->
                 </div>
-                    <hr>
-                <div class="row"><!--Div Pergunta Autor @Gabriel Falk-->
-                    <div class="col-12 m-0 p-0 " id="MostrarRepostas">
-                        <!--Coluna onde ira apresentar as resposta ja cadastrada no json server-->
-                    </div>
-
-                </div>
-                <hr><!--input de perguntas -->
+                <hr>
                 <div class="row">
-                    <div class="col-6 m-0 pe-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="mb-1">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Sua Resposta:</label>
-                                    <textarea class="form-control" rows="15"></textarea>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-12 m-0 p-0" id="MostrarRepostas">
+                        <!--Coluna onde irá apresentar as respostas já cadastradas no JSON server-->
                     </div>
-                    <div class="col-6 m-0 p-0">
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12 m-0 pe-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="mb-1">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Codigo da Resposta:</label>
-                                    <textarea class="form-control" rows="15"></textarea>
+                                    <label for="respostaTexto" class="form-label">Sua Resposta:</label>
+                                    <textarea class="form-control" id="respostaTexto" rows="15"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-danger mt-2" onclick="">Envie sua resposta</button>
+                    <button type="button" class="btn btn-danger mt-2" onclick="enviarResposta()">Envie sua resposta</button>
                 </div>
             </div>
-            <!-- Footer padrão, ainda vou editar, Samuel -->
             <footer class="bg-danger text-white pt-4 mt-4">
                 <div class="offset-md-1">
                     <div class="row">
                         <div class="col-md-3 ps-4">
                             <img src="assets/images/brasao.svg" alt="LogoFooter" id="logo_footer">
                         </div>
-                        
                     </div>
                     <div class="row">
                         <div class="col-12 text-center">
@@ -143,7 +127,9 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
-            <script src="/codigo/question_page/assets/javacript/script.js" type="module"></script>
+            <script src="/codigo/question_page/assets/javacript/script.js"></script>
+        </div>
+    </div>
 </body>
 
 </html>
