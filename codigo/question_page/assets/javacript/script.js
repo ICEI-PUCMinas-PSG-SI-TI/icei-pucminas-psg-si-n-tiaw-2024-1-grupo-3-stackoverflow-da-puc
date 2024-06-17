@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((res) => res.json())
     .then((jsonData) => {
       displayQuestion(jsonData.DataQuestion);
-      displayAnswers(jsonData.DataAnwser,jsonData.DataAccount);
+      displayAnswers(jsonData.DataAnwser, jsonData.DataAccount);
     })
     .catch((error) => console.error("Error fetching JSON data:", error));
 });
@@ -17,19 +17,32 @@ function displayAnswers(answers, accounts) {
 
   const answersForQuestion = answers.filter((answerSet) => answerSet.question_id === questionId);
   if (answersForQuestion.length > 0) {
-      answersForQuestion.forEach((answer) => {
-          let newDiv = document.createElement("div");
-          const account = accounts.find(acc => acc.idConta === answer.idconta);
-          const formattedAnswer = answer.resposta.map(line => line.replace(/\n/g, "<br>")).join(""); // Substituir quebras de linha
-          newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${formattedAnswer}</p></div><div class="col-3"><img src="${account.imgUrl}" id="userimg"><span class="m-1">${account.nomeConta}</span></div></div>`;
-          tela.appendChild(newDiv);
-      });
-  } else {
+    answersForQuestion.forEach((answer) => {
       let newDiv = document.createElement("div");
-      newDiv.innerHTML = "<p>Nenhuma resposta encontrada para esta pergunta.</p>";
+      const account = accounts.find(acc => acc.idConta === answer.idconta);
+      const formattedAnswer = answer.resposta.map(line => line.replace(/\n/g, "<br>")).join("");
+      newDiv.innerHTML = `<div class="border p-2 m-2">
+                              <div class="col-12">
+                                 <p>${formattedAnswer}</p>
+                              </div>
+                              <div class="row">
+                               <div class="col-3">
+                                 <img src="${account.imgUrl}" id="userimg">
+                                 <span class="m-1">${account.nomeConta}</span>
+                              </div>
+                                <div class="col-9 ">
+                                  <span class=" float-end">${answer.dataEHora}</span>
+                                  </div>
+                                </div>
+                          </div>`;
       tela.appendChild(newDiv);
+    });
+  } else {
+    let newDiv = document.createElement("div");
+    newDiv.innerHTML = "<p>Nenhuma resposta encontrada para esta pergunta.</p>";
+    tela.appendChild(newDiv);
   }
-}displayAnswers(jsonData.DataAnwser,jsonData.DataAccount)
+} displayAnswers(jsonData.DataAnwser, jsonData.DataAccount)
 
 function handleUpvote(event) {
   const questionId = event.target.getAttribute("data-id");
@@ -90,7 +103,7 @@ function displayQuestion(question) {
   let id = parseInt(params.get("id"));
   tela.innerHTML = "";
 
-  const pId = id-1;
+  const pId = id - 1;
 
   let titulo = document.createElement("div");
   titulo.innerHTML = `
@@ -100,9 +113,8 @@ function displayQuestion(question) {
         <div class="d-inline-flex flex-wrap pb-3">
             <div>
                 <img src="${question[pId].imgUrl}" id="userimg" />
-                <span class="pe-4" id="userPergunta">${
-                  question[pId].user
-                }</span>
+                <span class="pe-4" id="userPergunta">${question[pId].user
+    }</span>
             </div>
             <div>
                 <i class="bi bi-eye-fill h5"></i>
@@ -172,29 +184,31 @@ async function enviarResposta() {
   const questionId = parseInt(new URLSearchParams(location.search).get("id"));
 
   const novaResposta = {
-      question_id: questionId,
-      resposta: [respostaTexto],
-      idconta: 451
+    question_id: questionId,
+    resposta: [respostaTexto],
+    idconta: 451,
+    dataEHora: new Date().toLocaleString()
+
   };
 
   try {
-      const response = await fetch("http://localhost:3000/DataAnwser", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(novaResposta)
-      });
+    const response = await fetch("http://localhost:3000/DataAnwser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(novaResposta)
+    });
 
-      if (response.ok) {
-          console.log("Resposta enviada com sucesso");
-          const jsonData = await response.json();
-          adicionarResposta(jsonData);
-      } else {
-          console.error("Falha ao enviar resposta");
-      }
+    if (response.ok) {
+      console.log("Resposta enviada com sucesso");
+      const jsonData = await response.json();
+      adicionarResposta(jsonData);
+    } else {
+      console.error("Falha ao enviar resposta");
+    }
   } catch (error) {
-      console.error("Erro na solicitação:", error);
+    console.error("Erro na solicitação:", error);
   }
 }
 
