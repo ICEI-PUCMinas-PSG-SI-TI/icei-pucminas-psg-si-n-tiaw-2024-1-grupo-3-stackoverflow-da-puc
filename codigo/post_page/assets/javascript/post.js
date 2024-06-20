@@ -7,16 +7,17 @@ function handlePostQuetion(event) {
 
   const title = document.getElementById("post-title").value;
   const question = document.getElementById("question-post").value;
-  const tags = document.getElementById("tags-post").value;
+  const tags = document.getElementById("tags-post").value.split(",");
 
   const questions = localStorage.getItem("questions");
 
   const question_json = {
     title: title,
-    question: question,
+    description: question,
     tags: tags,
     upvotes: 0,
     downvotes: 0,
+    answers: 0,
   };
 
   if (questions) {
