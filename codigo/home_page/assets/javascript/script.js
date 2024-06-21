@@ -7,7 +7,7 @@ function activeLink() {
 list.forEach((item) => item.addEventListener("click", activeLink));
 
 function filtrardados(termopes, tagselecionada) {
-  let dadosfiltrado = data;
+  let dadosfiltrado = JSON.parse(localStorage.getItem("questions"));
   if (termopes) {
     dadosfiltrado = dadosfiltrado.filter((item) =>
       item.title.toLowerCase().includes(termopes)

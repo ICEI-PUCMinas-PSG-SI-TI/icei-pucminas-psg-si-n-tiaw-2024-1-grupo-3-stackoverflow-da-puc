@@ -101,11 +101,37 @@ function handleSaveQuestion(event) {
   }
 }
 
+function handleDeleteQuestion(event) {
+  const questionId = event.target.getAttribute("data-id");
+
+  const questions = JSON.parse(localStorage.getItem("questions"));
+
+  const updatedQuestions = questions.filter(
+    (question) => question.id != questionId
+  );
+
+  localStorage.setItem("questions", JSON.stringify(updatedQuestions));
+
+  const answers = JSON.parse(localStorage.getItem("answers"));
+
+  if (answers) {
+    const updatedAnswers = answers.filter(
+      (answer) => answer.question_id != questionId
+    );
+
+    localStorage.setItem("answers", JSON.stringify(updatedAnswers));
+  }
+
+  window.location.href = "/codigo/home_page/index.html";
+}
+
 function displayQuestion(question) {
   const tela = document.getElementById("MostrarPergunta");
   let params = new URLSearchParams(location.search);
   let id = parseInt(params.get("id"));
   tela.innerHTML = "";
+
+  const user_id = JSON.parse(localStorage.getItem("usuario_logado")).db_id;
 
   let titulo = document.createElement("div");
   titulo.innerHTML = `
@@ -121,7 +147,12 @@ function displayQuestion(question) {
                 <i class="bi bi-hand-thumbs-up-fill pe-1"></i>
                 <span>${question.downvotes} downvotes</span>
             </div>
+
+            <div>
+              <i class="bi bi-person-fill"></i>
+              <span>Usuario: ${question.username}</span>
             </div>
+          </div>
         </div>
         <div class="row">
             <div class="col-2 col-md-1" id="vote">
@@ -150,6 +181,19 @@ function displayQuestion(question) {
             >
             <i class="bi bi-box-arrow-down h1" data-id="${id}"></i>
             </button>
+
+            ${
+              user_id == question.user_id &&
+              `<button
+                  type="button"
+                  class="btn btn-transparent text-danger"
+                  id="question-delete"
+                  data-id="${id}"
+                >
+                  <i class="bi bi-trash h1" data-id="${id}"></i>
+                </button>`
+            }
+
             </div>
             <div class="col-md-6">
             <p class="font-monospace p-3" id="questionCode">
@@ -163,10 +207,12 @@ function displayQuestion(question) {
   const up_vote = document.getElementById("question-upVote");
   const down_vote = document.getElementById("question-downVote");
   const save_question = document.getElementById("question-save");
+  const delete_question = document.getElementById("question-delete");
 
   save_question.addEventListener("click", handleSaveQuestion);
   up_vote.addEventListener("click", handleUpvote);
   down_vote.addEventListener("click", handleDownvote);
+  delete_question.addEventListener("click", handleDeleteQuestion);
 }
 
 async function enviarResposta() {

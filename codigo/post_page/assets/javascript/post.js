@@ -23,6 +23,7 @@ function handlePostQuetion(event) {
     downvotes: 0,
     answers: 0,
     user_id: user_json.db_id,
+    username: user_json.nome,
   };
 
   if (questions) {
