@@ -1,35 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("../json/data.json")
-    .then((res) => res.json())
-    .then((jsonData) => {
-      displayQuestion(jsonData.DataQuestion);
-      displayAnswers(jsonData.DataAnwser,jsonData.DataAccount);
-    })
-    .catch((error) => console.error("Error fetching JSON data:", error));
-});
-
-function displayAnswers(answers, accounts) {
-  const tela = document.getElementById("MostrarRepostas");
-  tela.innerHTML = "";
-
   const params = new URLSearchParams(location.search);
   const questionId = parseInt(params.get("id"));
 
-  const answersForQuestion = answers.filter((answerSet) => answerSet.question_id === questionId);
-  if (answersForQuestion.length > 0) {
-      answersForQuestion.forEach((answer) => {
-          let newDiv = document.createElement("div");
-          const account = accounts.find(acc => acc.idConta === answer.idconta);
-          const formattedAnswer = answer.resposta.map(line => line.replace(/\n/g, "<br>")).join(""); // Substituir quebras de linha
-          newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${formattedAnswer}</p></div><div class="col-3"><img src="${account.imgUrl}" id="userimg"><span class="m-1">${account.nomeConta}</span></div></div>`;
-          tela.appendChild(newDiv);
-      });
-  } else {
-      let newDiv = document.createElement("div");
-      newDiv.innerHTML = "<p>Nenhuma resposta encontrada para esta pergunta.</p>";
-      tela.appendChild(newDiv);
+  const questions = localStorage.getItem("questions");
+
+  if (questions) {
+    const questions_array = JSON.parse(questions);
+
+    const question = questions_array.find(
+      (question) => question.id == questionId
+    );
+
+    displayQuestion(question);
   }
-}displayAnswers(jsonData.DataAnwser,jsonData.DataAccount)
+
+  const answers = localStorage.getItem("answers");
+
+  if (answers) {
+    const answers_array = JSON.parse(answers);
+
+    const answers_for_question = answers_array.filter(
+      (answer) => answer.question_id == questionId
+    );
+
+    displayAnswers(answers_for_question);
+  }
+});
+
+function displayAnswers(answers) {
+  const tela = document.getElementById("MostrarRepostas");
+  tela.innerHTML = "";
+
+  if (answers.length > 0) {
+    answers.forEach((answer) => {
+      let newDiv = document.createElement("div");
+      newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${answer.text}</p></div><div class="col-3"><span class="m-1">${answer.user}</span></div></div>`;
+      tela.appendChild(newDiv);
+    });
+  } else {
+    let newDiv = document.createElement("div");
+    newDiv.innerHTML = "<p>Nenhuma resposta encontrada para esta pergunta.</p>";
+    tela.appendChild(newDiv);
+  }
+}
 
 function handleUpvote(event) {
   const questionId = event.target.getAttribute("data-id");
@@ -44,6 +57,8 @@ function handleUpvote(event) {
   });
 
   localStorage.setItem("questions", JSON.stringify(updatedQuestions));
+
+  location.reload();
 }
 
 function handleDownvote(event) {
@@ -59,6 +74,8 @@ function handleDownvote(event) {
   });
 
   localStorage.setItem("questions", JSON.stringify(updatedQuestions));
+
+  location.reload();
 }
 
 function handleSaveQuestion(event) {
@@ -90,31 +107,19 @@ function displayQuestion(question) {
   let id = parseInt(params.get("id"));
   tela.innerHTML = "";
 
-  const pId = id-1;
-
   let titulo = document.createElement("div");
   titulo.innerHTML = `
         <div class="row">
-        <div class="col-md-10 h3" id="titulo">${question[pId].title}</div>
+        <div class="col-md-10 h3" id="titulo">${question.title}</div>
         </div>
         <div class="d-inline-flex flex-wrap pb-3">
             <div>
-                <img src="${question[pId].imgUrl}" id="userimg" />
-                <span class="pe-4" id="userPergunta">${
-                  question[pId].user
-                }</span>
-            </div>
-            <div>
-                <i class="bi bi-eye-fill h5"></i>
-                <span class="pe-4" id="views">${question[pId].views}</span>
-            </div>
-            <div>
                 <i class="bi bi-hand-thumbs-down-fill pe-1"></i>
-                <span class="pe-4">${question[pId].upvotes} upvotes</span>
+                <span class="pe-4">${question.upvotes} upvotes</span>
             </div>
             <div>
                 <i class="bi bi-hand-thumbs-up-fill pe-1"></i>
-                <span>${question[pId].downvotes} downvotes</span>
+                <span>${question.downvotes} downvotes</span>
             </div>
             </div>
         </div>
@@ -148,11 +153,8 @@ function displayQuestion(question) {
             </div>
             <div class="col-md-6">
             <p class="font-monospace p-3" id="questionCode">
-                ${question[pId].descCodigo.replace(/\n/g, "<br />")}
+            ${question.description}
             </p>
-            </div>
-            <div class="col-md-10">
-            <span> ${question[pId].desc} </span>
             </div>
         </div>
         </div>`;
@@ -171,31 +173,32 @@ async function enviarResposta() {
   const respostaTexto = document.querySelector("#respostaTexto").value;
   const questionId = parseInt(new URLSearchParams(location.search).get("id"));
 
-  const novaResposta = {
-      question_id: questionId,
-      resposta: [respostaTexto],
-      idconta: 451
+  const user = JSON.parse(localStorage.getItem("usuario_logado"));
+
+  const answer_json = {
+    question_id: questionId,
+    text: respostaTexto,
+    user: user.nome,
   };
 
-  try {
-      const response = await fetch("http://localhost:3000/DataAnwser", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(novaResposta)
-      });
+  const answers = localStorage.getItem("answers");
 
-      if (response.ok) {
-          console.log("Resposta enviada com sucesso");
-          const jsonData = await response.json();
-          adicionarResposta(jsonData);
-      } else {
-          console.error("Falha ao enviar resposta");
-      }
-  } catch (error) {
-      console.error("Erro na solicitação:", error);
+  if (answers) {
+    const answers_array = JSON.parse(answers);
+
+    const id = answers_array.length + 1;
+
+    answer_json.id = id;
+
+    answers_array.push(answer_json);
+
+    localStorage.setItem("answers", JSON.stringify(answers_array));
+  } else {
+    answer_json.id = 1;
+    localStorage.setItem("answers", JSON.stringify([answer_json]));
   }
+
+  location.reload();
 }
 
 function adicionarResposta(resposta) {
