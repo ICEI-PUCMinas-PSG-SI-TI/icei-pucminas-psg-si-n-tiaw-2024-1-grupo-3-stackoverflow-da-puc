@@ -11,6 +11,10 @@ function handlePostQuetion(event) {
 
   const questions = localStorage.getItem("questions");
 
+  const user = localStorage.getItem("usuario_logado");
+
+  const user_json = JSON.parse(user);
+
   const question_json = {
     title: title,
     description: question,
@@ -18,6 +22,7 @@ function handlePostQuetion(event) {
     upvotes: 0,
     downvotes: 0,
     answers: 0,
+    user_id: user_json.db_id,
   };
 
   if (questions) {
