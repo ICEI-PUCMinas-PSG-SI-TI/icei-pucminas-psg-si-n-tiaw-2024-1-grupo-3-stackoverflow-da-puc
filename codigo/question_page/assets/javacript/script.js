@@ -194,6 +194,22 @@ function displayQuestion(question) {
                 </button>`
             }
 
+            ${
+              user_id == question.user_id &&
+              `
+              <a href="/codigo/post_page/index.html?editing=true&question_id=${id}">
+                <button
+                  type="button"
+                  class="btn btn-transparent text-danger"
+                  id="question-delete"
+                  data-id="${id}"
+                >
+                    <i class="bi bi-pencil-square h1" data-id="${id}"></i>
+                </button>
+              </a>
+              `
+            }
+
             </div>
             <div class="col-md-6">
             <p class="font-monospace p-3" id="questionCode">
