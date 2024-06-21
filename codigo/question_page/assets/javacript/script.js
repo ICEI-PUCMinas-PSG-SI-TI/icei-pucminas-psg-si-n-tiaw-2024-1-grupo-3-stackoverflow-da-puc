@@ -183,6 +183,18 @@ async function enviarResposta() {
 
   const answers = localStorage.getItem("answers");
 
+  const questions = localStorage.getItem("questions");
+
+  const questions_array = JSON.parse(questions);
+
+  const current_question = questions_array.find(
+    (question) => question.id == questionId
+  );
+
+  current_question.answers += 1;
+
+  localStorage.setItem("questions", JSON.stringify(questions_array));
+
   if (answers) {
     const answers_array = JSON.parse(answers);
 
