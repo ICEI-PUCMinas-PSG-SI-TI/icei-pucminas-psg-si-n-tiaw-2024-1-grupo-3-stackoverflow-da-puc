@@ -45,6 +45,7 @@ $(document).ready(function() {
             id: id,
             db_id: cadastro.length + 1,
             senha: password,
+            img_perfil:"../imagem/img.png" ,
         });
         salvarCadastro(cadastro);
         alert("Conta cadastrada com sucesso!");

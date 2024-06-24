@@ -49,6 +49,7 @@ function handlePostQuetion(event) {
     answers: 0,
     user_id: user_json.db_id,
     username: user_json.nome,
+    img_perfil:user_json.img_perfil,
   };
 
   if (questions) {

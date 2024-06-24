@@ -241,6 +241,7 @@ async function enviarResposta() {
     question_id: questionId,
     text: respostaTexto,
     user: user.nome,
+    img_perfil:user.img_perfil,
   };
 
   const answers = localStorage.getItem("answers");

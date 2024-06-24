@@ -21,7 +21,7 @@ function filtrardados(termopes, tagselecionada) {
   displayData(dadosfiltrado);
 }
 
-function displayData(data) {
+function displayData(data,cadastro) {
   // função para colocar o  card na tela
   const tela = document.getElementById("dataDisplay");
   tela.innerHTML = ""; // Limpa o conteúdo existente
@@ -64,7 +64,9 @@ function displayData(data) {
                                           )
                                           .join("")}
                                     </div>
-
+                                    <div class=" col-3 float-end">
+                                    <img src="${item.img_perfil}" class="icondata"><p style="display:inline"> ${item.username}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -94,9 +96,10 @@ function tagsfiltro(data) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const questions = localStorage.getItem("questions");
+  const cadastros = localStorage.getItem("questions");
 
   if (questions) {
-    displayData(JSON.parse(questions));
+    displayData(JSON.parse(questions),JSON.parse(cadastros));
   }
 
   const input = document.getElementById("busca"); //Busca o elemento apartir do texto digitado e do seletor
