@@ -38,7 +38,7 @@ function populateAnsweredQuestions() {
     );
     const questionElement = document.createElement("div");
     questionElement.innerHTML = `
-    <a href="../question_page/index.html?id=${question.id}"><h3>${question.title}</h3></a>
+    <a href="../question_page/index.html?id=${question.id}" class="text-dark text-decoration-none"><h3>${question.title}</h3></a>
 
     `;
     answeredQuestionsContainer.appendChild(questionElement);
@@ -70,7 +70,7 @@ function populateDidQuestions() {
     const question = didQuestions[i];
     const questionElement = document.createElement("div");
     questionElement.innerHTML = `
-    <a href="../question_page/index.html?id=${question.id}"><h3>${question.title}</h3></a>
+    <a href="../question_page/index.html?id=${question.id}"class="text-dark text-decoration-none"><h3>${question.title}</h3></a>
 
     `;
     didQuestionsContainer.appendChild(questionElement);
@@ -103,7 +103,7 @@ function populateSavedQuestions() {
     const question = savedQuestionsData[i];
     const questionElement = document.createElement("div");
     questionElement.innerHTML = `
-    <a href="../question_page/index.html?id=${question.id}"><h3>${question.title}</h3></a>
+    <a href="../question_page/index.html?id=${question.id}" class=" text-dark text-decoration-none"><h3>${question.title}</h3></a>
 
     `;
     savedQuestionsContainer.appendChild(questionElement);
