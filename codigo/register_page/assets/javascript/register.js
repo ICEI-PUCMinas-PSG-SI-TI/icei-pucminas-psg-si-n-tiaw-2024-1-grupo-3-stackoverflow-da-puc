@@ -14,14 +14,15 @@ $(document).ready(function() {
     }
 
     $("#registerbtn").click(function() {
-        var name = $('#newUsername').val().trim();
-        var email = $('#newEmail').val().trim();
-        var id = $('#newId').val().trim();
-        var password = $('#newPassword').val().trim();
-        var passwordC = $('#confirmPassword').val().trim();
+        var nome = $('#novoUsuario').val().trim();
+        var email = $('#novoEmail').val().trim();
+        var id_estudante = $('#novoId').val().trim();
+        var senha = $('#novaSenha').val().trim();
+        var confirmaSenha = $('#confirmaSenha').val().trim();
+        var tipoConta = $('#tipoConta').val();
         
         // Verificar se todos os campos estão preenchidos
-        if (!name || !email || !id || !password || !passwordC) {
+        if (!nome || !email || !id_estudante || !senha || !confirmaSenha || !tipoConta) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
@@ -31,20 +32,27 @@ $(document).ready(function() {
             alert('Por favor, insira um email válido.');
             return;
         }
-
+        
         // Verificar se as senhas coincidem
-        if (password !== passwordC) {
+        if (senha !== confirmaSenha) {
             alert('As senhas não coincidem.');
+            return;
+        }
+        
+        // Verificar se o tipo de conta for selecionado
+        if(tipoConta !== "1" && tipoConta !== "2"){
+            alert('Por favor, insira um tipo de conta.');
             return;
         }
 
         const cadastro = pegaCadastro();
         cadastro.push({ 
-            nome: name,
+            nome: nome,
             email: email,
-            id: id,
+            id_estudante: id_estudante,
             db_id: cadastro.length + 1,
-            senha: password,
+            senha: senha,
+            tipo_conta: tipoConta,
             img_perfil:"../imagem/img.png" ,
         });
         salvarCadastro(cadastro);

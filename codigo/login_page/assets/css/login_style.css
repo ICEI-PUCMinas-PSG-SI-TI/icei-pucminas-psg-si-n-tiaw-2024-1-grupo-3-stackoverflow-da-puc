@@ -19,6 +19,9 @@
 #title_form{
     margin-top: 50px;
 }
+.form-control::placeholder {
+    opacity: 0.5;
+}
 #image_login{
     margin: 0px;
     padding: 0px;

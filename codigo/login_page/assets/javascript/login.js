@@ -10,11 +10,11 @@ $(document).ready(function(){
 
     $("#loginbtn").click(function() {
         var cadastro = pegaCadastro();
-        var username = $('#loginUsername').val().trim();
-        var password = $('#loginPassword').val().trim();
+        var usuario = $('#loginUsuario').val().trim();
+        var senha = $('#loginSenha').val().trim();
 
         var usuarioEncontrado = cadastro.find(function(user) {
-            return user.nome === username && user.senha === password;
+            return user.nome === usuario && user.senha === senha;
         });
         if (usuarioEncontrado){
             alert("Login realizado com sucesso");

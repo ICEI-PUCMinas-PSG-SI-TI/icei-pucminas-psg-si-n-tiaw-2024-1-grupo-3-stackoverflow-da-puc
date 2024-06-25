@@ -32,7 +32,7 @@
             alt="image_login"
           />
         </div>
-        <!-- Login -->
+        <!-- Registro -->
         <div class="col-md-4 m-0 p-0">
           <!-- Titulo da Pagina -->
           <!-- Tentei jogar no row mas não consegui-->
@@ -45,7 +45,7 @@
             >
               <div id="login_form" class="col-md-8">
                 <h4 id="title_form" class="text-center">
-                  Create a Puc Overflow account
+                  Crie uma conta Puc Overflow
                 </h4>
                 <form>
                   <label class="input-group mb-3 shadow-sm">
@@ -53,11 +53,11 @@
                       ><i class="bi bi-person-circle"></i
                     ></span>
                     <input
-                      id="newUsername"
+                      id="novoUsuario"
                       type="text"
                       class="form-control"
-                      placeholder="Username"
-                      aria-label="Username"
+                      placeholder="Nome"
+                      aria-label="Nome"
                       aria-describedby="basic-addon1"
                     />
                   </label>
@@ -66,7 +66,7 @@
                       ><i class="bi bi-envelope"></i
                     ></span>
                     <input
-                      id="newEmail"
+                      id="novoEmail"
                       type="email"
                       class="form-control"
                       placeholder="Email"
@@ -79,11 +79,11 @@
                       ><i class="bi bi-person-bounding-box"></i
                     ></span>
                     <input
-                      id="newId"
+                      id="novoId"
                       type="number"
                       class="form-control"
-                      placeholder="Student ID"
-                      aria-label="Student ID"
+                      placeholder="Número de Pessoa"
+                      aria-label="Número de Pessoa"
                       aria-describedby="basic-addon1"
                       min="1"
                     />
@@ -93,11 +93,11 @@
                       ><i class="bi bi-lock-fill"></i
                     ></span>
                     <input
-                      id="newPassword"
+                      id="novaSenha"
                       type="password"
                       class="form-control"
-                      placeholder="Password"
-                      aria-label="Password"
+                      placeholder="Senha"
+                      aria-label="Senha"
                       aria-describedby="basic-addon1"
                     />
                   </label>
@@ -106,13 +106,23 @@
                       ><i class="bi bi-lock-fill"></i
                     ></span>
                     <input
-                      id="confirmPassword"
+                      id="confirmaSenha"
                       type="password"
                       class="form-control"
-                      placeholder="Confirm Password"
-                      aria-label="Confirm Password"
+                      placeholder="Confirme a Senha"
+                      aria-label="Confirme a Senha"
                       aria-describedby="basic-addon1"
                     />
+                  </label>
+                  <label class="input-group mb-3 shadow-sm">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="bi bi-clipboard-data"></i
+                    ></span>
+                    <select id="tipoConta" class="form-select" aria-label="Default select example">
+                      <option selected>Selecione o tipo de conta</option>
+                      <option value="1">Alunos</option>
+                      <option value="2">Professor</option>
+                    </select>
                   </label>
                   <div class="text-center">
                     <button
@@ -120,7 +130,7 @@
                       type="button"
                       class="btn btn-danger btn-lg shadow"
                     >
-                      Create Account
+                      Criar Conta
                     </button>
                   </div>
                 </form>
@@ -128,7 +138,7 @@
                   <a
                     href="/codigo/login_page/index.html"
                     class="text-dark link-underline link-underline-opacity-0"
-                    >Already have an account? Log in</a
+                    >Ja possui uma conta?</a
                   >
                 </div>
               </div>
@@ -136,27 +146,6 @@
           </div>
         </div>
       </div>
-
-      <footer class="bg-danger text-white pt-4 mt-4">
-        <div class="offset-md-1">
-          <div class="row">
-            <div class="col-md-3 ps-4">
-              <img
-                src="../imagem/brasao.svg"
-                alt="LogoFooter"
-                id="logo_footer"
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 text-center">
-              <p class="mb-0">
-                &copy; Projeto PucOverflow. Todos os direitos reservados.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

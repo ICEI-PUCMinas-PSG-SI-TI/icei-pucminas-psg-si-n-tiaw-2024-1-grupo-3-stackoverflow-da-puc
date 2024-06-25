@@ -9,12 +9,12 @@
 #registerbtn{
    padding: 10px 80px 10px 80px;
 }
-#new_username{
-    margin-top: 20px;
-}
 #login_title{
     margin-top: 80px;
     font-family: 'Times New Roman', Times, serif;
+}
+.form-control::placeholder {
+    opacity: 0.5;
 }
 /* Mesmo da pagina Login */
 #title_form{
