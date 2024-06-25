@@ -9,8 +9,16 @@ $(document).ready(function() {
     }
 
     function validarEmail(email) {
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        var emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailtest.test(email);
+    }
+
+    function confereID(idEstudante, temp) {
+        return temp.some(cadastro => cadastro.id_estudante === idEstudante);
+    }
+
+    function confereEmail(email, temp){
+        return temp.some(cadastro => cadastro.email === email);
     }
 
     $("#registerbtn").click(function() {
@@ -47,8 +55,14 @@ $(document).ready(function() {
 
         const cadastro = pegaCadastro();
 
+        // Verificar se o email existe
+        if(confereEmail(email, cadastro)){
+            alert('O email já foi cadastrado.')
+            return;
+        }
+
         // Verificar se o numero de pessoa existe
-        if (idEstudanteExiste(id_estudante, cadastro)) {
+        if (confereID(id_estudante, cadastro)) {
             alert('O Número de pessoa já está em uso.');
             return;
         }
