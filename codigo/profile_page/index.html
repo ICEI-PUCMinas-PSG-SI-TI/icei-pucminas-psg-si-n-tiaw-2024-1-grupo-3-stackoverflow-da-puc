@@ -55,7 +55,7 @@
                   <span class="icon"
                     ><ion-icon name="person-circle-outline"></ion-icon
                   ></span>
-                  <span class="title">Profile</span>
+                  <span class="title">Perfil</span>
                 </a>
               </li>
               <li class="list">
@@ -63,7 +63,7 @@
                   <span class="icon"
                     ><ion-icon name="help-outline"></ion-icon
                   ></span>
-                  <span class="title">Question</span>
+                  <span class="title">Pergunta</span>
                 </a>
               </li>
               <li class="logoutitem">
@@ -78,33 +78,6 @@
           </div>
         </div>
         <div class="col-9 offset-1">
-          <div class="row m-0 p-0 align-items-center">
-            <div class="col-10">
-              <div class="input-group mb-3 pt-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search a question"
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-outline-secondary"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    <ion-icon name="search-outline"></ion-icon>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 text-end">
-              <button class="btn btn-danger" type="submit">
-                <i class="bi bi-pen"></i> Edit Profile
-              </button>
-            </div>
-          </div>
           <div class="col-10">
             <div id="dataDisplay">
               <!-- JSON Data vai aparecer aqui -->
@@ -116,7 +89,7 @@
     </div>
 
     <div class="row mt-4">
-      <div class="col-3">
+      <div class="col-2">
         <img
           class="FotoPerfil"
           src="assets/images/Foto perfil.png"
@@ -124,74 +97,10 @@
         />
       </div>
       <div class="col-9">
-        <div><h2>Israel Domenici</h2></div>
+        <div><h2 id="username">Israel Domenici</h2></div>
         <div>
           <i class="fa-solid fa-cake-candles"></i> Member since today
           <i class="fa-solid fa-clock"></i> Last seen this week
-        </div>
-      </div>
-      <div class="col-12 mt-4">
-        <div class="col-3 text-end">
-          <button class="btn btn-danger" type="submit">
-            <i class="bi bi-pen"></i> Saves
-          </button>
-          <button class="btn btn-danger" type="submit">
-            <i class="bi bi-pen"></i> Active
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-3">
-        <div class="infosabaixoperfil">
-          <ul>
-            <li>Summary</li>
-            <li>Answers</li>
-            <li>Questions</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-9">
-        <div class="row">
-          <!-- Card 1 -->
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Reputation is how the community thanks you
-                </h5>
-                <p class="card-text">
-                  When users upvote your helpful posts, you'll earn reputation
-                  and unlock new privileges.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Earn badges for helpful actions</h5>
-                <p class="card-text">
-                  Badges are bits of digital flair that you get when you
-                  participate in especially helpful ways.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Measure your impact</h5>
-                <p class="card-text">
-                  Your posts and helpful actions here help hundreds or thousands
-                  of people searching for help.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -199,17 +108,15 @@
     <div class="row1">
       <div class="col-6">
         <div class="card w-75 mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Answers</h5>
-            <p class="card-text">You have not answered any questions.</p>
+          <div class="card-body" id="answered-questions">
+            <h5 class="card-title">Perguntas que voce respondeu</h5>
           </div>
         </div>
       </div>
       <div class="col-6">
         <div class="card w-75 mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Questions</h5>
-            <p class="card-text">You have not asked any questions</p>
+          <div class="card-body" id="did-questions">
+            <h5 class="card-title">Perguntas feitas</h5>
           </div>
         </div>
       </div>
@@ -217,60 +124,10 @@
       <div class="col-6">
         <div class="card w-75 mb-3">
           <div class="card-body" id="saved-questions">
-            <h5 class="card-title">Saved questions</h5>
+            <h5 class="card-title">Questões salvas</h5>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container-fluid1">
-      <!-- Existing content -->
-
-      <!-- Section for tags and filtered content -->
-      <div class="row mt-4">
-        <div class="col-12">
-          <h5>Filter questions by tags</h5>
-          <div id="tags" class="mb-3">
-            <button class="btn btn-secondary tag-filter" data-tag="HTML">
-              HTML
-            </button>
-            <button class="btn btn-secondary tag-filter" data-tag="CSS">
-              CSS
-            </button>
-            <button class="btn btn-secondary tag-filter" data-tag="JavaScript">
-              JavaScript
-            </button>
-            <button class="btn btn-secondary tag-filter" data-tag="C#">
-              C#
-            </button>
-            <button class="btn btn-secondary tag-filter" data-tag="C++">
-              C++
-            </button>
-            <button class="btn btn-secondary tag-filter" data-tag="C">C</button>
-          </div>
-        </div>
-      </div>
-
-      <footer class="bg-danger text-white pt-4 mt-4">
-        <div class="offset-md-1">
-          <div class="row">
-            <div class="col-md-3 ps-4">
-              <img
-                src="../imagem/brasao.svg"
-                alt="LogoFooter"
-                id="logo_footer"
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 text-center">
-              <p class="mb-0">
-                &copy; Projeto PucOverflow. Todos os direitos reservados.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
 
     <script
