@@ -34,7 +34,7 @@ function displayAnswers(answers) {
   if (answers.length > 0) {
     answers.forEach((answer) => {
       let newDiv = document.createElement("div");
-      newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${answer.text}</p></div><div class="col-3"><span class="m-1">${answer.user}</span></div></div>`;
+      newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${answer.text}</p></div><div class="col-3"><span class="m-1">usuario: ${answer.user}</span></div></div>`;
       tela.appendChild(newDiv);
     });
   } else {
@@ -183,8 +183,8 @@ function displayQuestion(question) {
             </button>
 
             ${
-              user_id == question.user_id &&
-              `<button
+              user_id == question.user_id
+                ? `<button
                   type="button"
                   class="btn btn-transparent text-danger"
                   id="question-delete"
@@ -192,11 +192,12 @@ function displayQuestion(question) {
                 >
                   <i class="bi bi-trash h1" data-id="${id}"></i>
                 </button>`
+                : ``
             }
 
             ${
-              user_id == question.user_id &&
-              `
+              user_id == question.user_id
+                ? `
               <a href="/codigo/post_page/index.html?editing=true&question_id=${id}">
                 <button
                   type="button"
@@ -208,6 +209,7 @@ function displayQuestion(question) {
                 </button>
               </a>
               `
+                : ``
             }
 
             </div>
@@ -228,7 +230,10 @@ function displayQuestion(question) {
   save_question.addEventListener("click", handleSaveQuestion);
   up_vote.addEventListener("click", handleUpvote);
   down_vote.addEventListener("click", handleDownvote);
-  delete_question.addEventListener("click", handleDeleteQuestion);
+
+  if (delete_question) {
+    delete_question.addEventListener("click", handleDeleteQuestion);
+  }
 }
 
 async function enviarResposta() {
