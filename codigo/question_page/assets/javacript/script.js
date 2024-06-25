@@ -214,9 +214,17 @@ function displayQuestion(question) {
 
             </div>
             <div class="col-md-6">
-            <p class="font-monospace p-3" id="questionCode">
+
+            <p>
             ${question.description}
             </p>
+            ${
+              question.question_code
+                ? `            <p class="font-monospace p-3" id="questionCode">
+            ${question.question_code.replaceAll("\n", "<br>")}
+          </p>`
+                : ""
+            }
             </div>
         </div>
         </div>`;

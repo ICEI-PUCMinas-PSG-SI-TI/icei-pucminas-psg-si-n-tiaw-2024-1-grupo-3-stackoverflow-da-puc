@@ -8,6 +8,7 @@ const editing = params.get("editing");
 const titleEl = document.getElementById("post-title");
 const questionEl = document.getElementById("question-post");
 const tagsEl = document.getElementById("tags-post");
+const questioCodeEl = document.getElementById("question-code");
 
 if (editing && questionId) {
   const questions = JSON.parse(localStorage.getItem("questions"));
@@ -33,6 +34,7 @@ function handlePostQuetion(event) {
   const title = titleEl.value;
   const question = questionEl.value;
   const tags = tagsEl.value.split(",");
+  const questionCode = questioCodeEl.value;
 
   const questions = localStorage.getItem("questions");
 
@@ -49,7 +51,8 @@ function handlePostQuetion(event) {
     answers: 0,
     user_id: user_json.db_id,
     username: user_json.nome,
-    img_perfil:user_json.img_perfil,
+    img_perfil: user_json.img_perfil,
+    question_code: questionCode,
   };
 
   if (questions) {
