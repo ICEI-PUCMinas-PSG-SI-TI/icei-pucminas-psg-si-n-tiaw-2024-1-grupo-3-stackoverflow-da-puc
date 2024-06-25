@@ -46,6 +46,13 @@ $(document).ready(function() {
         }
 
         const cadastro = pegaCadastro();
+
+        // Verificar se o numero de pessoa existe
+        if (idEstudanteExiste(id_estudante, cadastro)) {
+            alert('O Número de pessoa já está em uso.');
+            return;
+        }
+
         cadastro.push({ 
             nome: nome,
             email: email,
