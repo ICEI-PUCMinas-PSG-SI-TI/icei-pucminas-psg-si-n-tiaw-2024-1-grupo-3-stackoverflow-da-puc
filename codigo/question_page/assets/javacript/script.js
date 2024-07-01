@@ -246,6 +246,12 @@ function displayQuestion(question) {
 
 async function enviarResposta() {
   const respostaTexto = document.querySelector("#respostaTexto").value;
+
+  if (!respostaTexto) {
+    alert("Por favor, insira uma resposta.");
+    return;
+  }
+
   const questionId = parseInt(new URLSearchParams(location.search).get("id"));
 
   const user = JSON.parse(localStorage.getItem("usuario_logado"));

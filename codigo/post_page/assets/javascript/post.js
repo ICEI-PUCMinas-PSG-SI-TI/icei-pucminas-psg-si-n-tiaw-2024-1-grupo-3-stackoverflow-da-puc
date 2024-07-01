@@ -23,6 +23,7 @@ if (editing && questionId) {
     titleEl.value = question.title;
     questionEl.value = question.description;
     tagsEl.value = question.tags.join(",");
+    questioCodeEl.value = question.question_code;
   }
 }
 
