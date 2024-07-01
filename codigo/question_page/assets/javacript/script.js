@@ -34,7 +34,7 @@ function displayAnswers(answers) {
   if (answers.length > 0) {
     answers.forEach((answer) => {
       let newDiv = document.createElement("div");
-      newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${answer.text}</p></div><div class="col-3"><span class="m-1">usuario: ${answer.user}</span></div></div>`;
+      newDiv.innerHTML = `<div class="border p-2 m-2"><div class="col-12"><p>${answer.text}</p><hr class="mb-0"></div><div class="col-11 d-flex justify-content-end "><span class="m-1"><img src="${answer.img_perfil}" id="userimg"> ${answer.user}</span></div></div>`;
       tela.appendChild(newDiv);
     });
   } else {

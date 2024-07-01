@@ -107,6 +107,17 @@ body {
     width: 20px;
     height: 20px;
 }
+
+.user-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.user-info img {
+    margin-right: 8px; /* Espaço entre a imagem e o nome do usuário */
+    vertical-align: middle; /* Alinhar verticalmente a imagem ao centro do texto */
+}
 @media (max-width: 768px) {
     #aside{
         display: none;

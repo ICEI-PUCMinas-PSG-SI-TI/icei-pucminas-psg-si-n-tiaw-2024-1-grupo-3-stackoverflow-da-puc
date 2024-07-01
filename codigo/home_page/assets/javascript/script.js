@@ -65,7 +65,7 @@ function displayData(data,cadastro) {
                                           .join("")}
                                     </div>
                                     <div class=" col-3 float-end">
-                                    <img src="${item.img_perfil}" class="icondata"><p style="display:inline"> ${item.username}</p>
+                                    <img src="${item.img_perfil}" id="userimg"><p style="display:inline"> ${item.username}</p>
                                     </div>
                                 </div>
                             </div>
