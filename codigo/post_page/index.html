@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Postar</title>
     <link rel="stylesheet" href="./assets/css/post_style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +39,7 @@
               </a>
             </span>
             <ul>
-              <li class="list active">
+              <li class="list">
                 <a href="../home_page/index.html">
                   <span class="icon"
                     ><ion-icon name="home-outline"></ion-icon
@@ -55,7 +55,7 @@
                   <span class="title">Perfil</span>
                 </a>
               </li>
-              <li class="list">
+              <li class="list active">
                 <a href="#">
                   <span class="icon"
                     ><ion-icon name="help-outline"></ion-icon
@@ -77,7 +77,56 @@
         <div class="col-12 col-md-9 offset-md-2">
           <!--Copiem o offset 2 fé -->
           <main>
-            <h1>Faça uma pergunta</h1>
+            <div class="d-flex">
+              <div class="flex-grow-1">
+                <h1>Faça uma pergunta</h1>
+              </div>
+              <div class="mb-3">
+                <!-- Modal com Media Query -->
+                <div id="mobile">
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal">
+                    <i class="bi bi-list h3"></i>
+                  </button>
+                  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <div class="modal-title w-100 text-center">
+                            <ul>
+                              <li class="list active">
+                                <a href="../home_page/index.html">
+                                  <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                  <span class="title">Home</span>
+                                </a>
+                              </li>
+                              <li class="list">
+                                <a href="../profile_page/index.html">
+                                  <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                                  <span class="title">Perfil</span>
+                                </a>
+                              </li>
+                              <li class="list">
+                                <a href="../post_page/index.html">
+                                  <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                                  <span class="title">Pergunta</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a href="../login_page/index.html">
+                                  <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                                  <span class="title">Logout</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                </div>
+                </div>
 
             <form id="post-question-form">
               <div class="row">
@@ -85,7 +134,6 @@
                   <h2>Título</h2>
                   <input type="text" required id="post-title" />
                 </div>
-
                 <div class="card">
                   <h2>Tags (separado pro virgula)</h2>
                   <input type="text" required id="tags-post" />

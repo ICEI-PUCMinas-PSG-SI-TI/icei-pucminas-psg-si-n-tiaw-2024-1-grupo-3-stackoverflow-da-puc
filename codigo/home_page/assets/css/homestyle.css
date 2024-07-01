@@ -73,6 +73,51 @@ body {
     background: #dc3545;
 }
 
+
+#Modal ul li a {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+}
+
+#Modal ul li {
+    list-style: none;
+}
+
+#Modal ul li a .title {
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+#Modal ul li a .icon {
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+#Modal ul li a .icon ion-icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    #aside{
+        display: none;
+    }
+    #mobile{
+        display: block;
+    }
+}
+@media screen and (min-width: 768px){
+    #mobile{
+        display: none;
+    }
+}
+
 #userimg {
     width: 30px;
     height: 30px; 
@@ -100,7 +145,7 @@ body {
 
 .logoutitem {
     padding-left: 5px;
-    padding-top: 240px;
+    padding-top: 550px;
     margin: 0;
 }
 .icondata{
@@ -117,9 +162,4 @@ body {
 .user-info img {
     margin-right: 8px; /* Espaço entre a imagem e o nome do usuário */
     vertical-align: middle; /* Alinhar verticalmente a imagem ao centro do texto */
-}
-@media (max-width: 768px) {
-    #aside{
-        display: none;
-    }
 }

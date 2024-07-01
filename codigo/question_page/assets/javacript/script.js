@@ -140,12 +140,12 @@ function displayQuestion(question) {
         </div>
         <div class="d-inline-flex flex-wrap pb-3">
             <div>
-                <i class="bi bi-hand-thumbs-down-fill pe-1"></i>
-                <span class="pe-4">${question.upvotes} upvotes</span>
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span class="pe-2">${question.upvotes} upvotes</span>
             </div>
             <div>
-                <i class="bi bi-hand-thumbs-up-fill pe-1"></i>
-                <span>${question.downvotes} downvotes</span>
+                <i class="bi bi-hand-thumbs-down-fill "></i>
+                <span class="pe-2">${question.downvotes} downvotes</span>
             </div>
 
             <div>
@@ -213,7 +213,7 @@ function displayQuestion(question) {
             }
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-10 col-10">
 
             <p>
             ${question.description}

@@ -21,7 +21,6 @@ body {
     height: 100%;
     width: 70px;
     background: #ffffff;
-    box-shadow: 10px 0 0 #ffffff;
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -101,36 +100,65 @@ body {
 
 .logoutitem {
     padding-left: 5px;
-    padding-top: 240px;
+    padding-top: 550px;
     margin: 0;
 }
 .icondata{
     width: 20px;
     height: 20px;
 }
+
+#Modal ul li a {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+}
+
+#Modal ul li {
+    list-style: none;
+}
+
+#Modal ul li a .title {
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+#Modal ul li a .icon {
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+#Modal ul li a .icon ion-icon {
+    font-size: 1.5rem;
+}
+
 @media (max-width: 768px) {
     #aside{
         display: none;
     }
+    #mobile{
+        display: block;
+    }
+    .FotoPerfil{
+        height:200px;
+    }
 }
-
-.FotoPerfil{
-    height:150px;
-    margin-left:165px;
+@media screen and (min-width: 768px){
+    .FotoPerfil{
+        height:150px;
+    }
+    #mobile{
+        display: none;
+    }
 }
-
 .infosabaixoperfil ul li{
     margin-left:170px;
     margin-top: 10px; 
     list-style: none;
 }
-
-.row1{
-    margin-left:150px;
-    margin-top:20px;
-}
-
-.container-fluid1{
-    margin-left:170px;
-}
-
